@@ -1,0 +1,2 @@
+export const GET_RATING = "GET_RATING"
+export const FILTER_RATING="FILTER_RATING"
