@@ -4,7 +4,7 @@ import * as navType from '../constants/sidenav'
 import * as commentsType from '../constants/Rating'
 import * as cartsType from '../constants/footer'
 export const getFoods =()=>{
-    return dispatch=>axios.get(`http://129.204.120.66:3008/goods`).then(res=>{
+    return dispatch=>axios.get(`http://localhost:3008/goods`).then(res=>{
      
         dispatch({
             type:foodsType.GET_FOODS,
@@ -16,7 +16,7 @@ export const getFoods =()=>{
 //获取导航
 export const getNav=()=>{
     return dispatch=>{
-        axios.get(`http://129.204.120.66:3008/goods`).then(res=>{
+        axios.get(`http://localhost:3008/goods`).then(res=>{
             const allnav = res.data.map(e=>e.name)
             dispatch({
                 type:navType.GET_NAV,
@@ -29,7 +29,7 @@ export const getNav=()=>{
 //获取评论
 export const getComments=()=>{
     return dispatch=>{
-        axios.get(`http://129.204.120.66:3008/ratings`).then(res=>{
+        axios.get(`http://localhost:3008/ratings`).then(res=>{
             dispatch({
                 type:commentsType.GET_RATING,
                 comments:res.data
@@ -41,7 +41,7 @@ export const getComments=()=>{
 
 export const getCart=()=>{
     return dispatch=>{
-        axios.get(`http://129.204.120.66:3008/carts`).then(res=>{
+        axios.get(`http://localhost:3008/carts`).then(res=>{
             dispatch({
                 type:cartsType.GET_CART,
                 cart:res.data
@@ -60,7 +60,7 @@ export const addCart=(cart,name)=>{
     cart.num[name]++
    }
     return dispatch=>{
-        axios.patch(`http://129.204.120.66:3008/carts`,cart).then(res=>{
+        axios.patch(`http://localhost:3008/carts`,cart).then(res=>{
             dispatch({
                 type:cartsType.ADD_CART,
                 cart:res.data
@@ -83,7 +83,7 @@ console.log(cart);
     return dispatch=>{
        console.log(222);
        
-        axios.patch(`http://129.204.120.66:3008/carts`,cart).then(res=>{
+        axios.patch(`http://localhost:3008/carts`,cart).then(res=>{
             console.log(res.data);
             dispatch({
                 type:cartsType.DEL_CART,
@@ -99,7 +99,7 @@ export const blankCart = ()=>{
         num:{}
     }
     return dispatch=>{
-        axios.patch(`http://129.204.120.66:3008/carts`,cart).then(()=>{
+        axios.patch(`http://localhost:3008/carts`,cart).then(()=>{
             dispatch({
                 type:cartsType.BLANK_CART,
                 cart:cart

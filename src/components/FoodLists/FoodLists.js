@@ -42,7 +42,7 @@ class FoodLists extends Component {
           {
               ele.foods.map(e=><li key={e.id} >
               <img src={e.icon} alt="" onClick={()=>{
-                  this.showFood(e.id)
+                  this.showFoods(e.id)
               }}/>
               <div>
                 <span>{e.name}</span>
@@ -76,6 +76,9 @@ class FoodLists extends Component {
                   <p>{showFood.name}</p>
                   <p>{showFood.description}</p>
                   <p>{showFood.info}</p>
+                  <div onClick={this.closeFood}>
+                      x
+                  </div>
                </div>:<></>}
             </div>
         );
@@ -88,8 +91,10 @@ class FoodLists extends Component {
         const{cutCart}=this.props
         cutCart(cart,name)
         }
-    showFood=(id)=>{
+    showFoods=(id)=>{
         const {foods}=this.props
+      console.log('onnnnnn');
+      
         let newFood = []
         let all = []
         newFood = foods.map(e=>[...newFood,...e.foods])
@@ -100,6 +105,11 @@ class FoodLists extends Component {
     this.setState({
         showFood:showfood
     })
+    }
+    closeFood = ()=>{
+        this.setState({
+            showFood:null
+        })
     }
 }
 

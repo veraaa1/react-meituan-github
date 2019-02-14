@@ -16,16 +16,16 @@ class Header extends Component {
                     </ul>
                 </div>
                 <div className="header-inner" style={{marginTop:isUp?'-205px':0}}>
-                    <h1>一品粥铺</h1>
+                    <h1>一品家常菜</h1>
                     <div className="description">
                         <p>配送约30分钟</p>
                         <p>公告：本店是新店，欢迎小主品尝</p>
                         <div>
-                            <span>10减9</span>
-                            <span>25减13</span>
+                            <span>12减9</span>
+                            <span>59减25</span>
                         </div>
                     </div>
-                    <img src="https://p1.meituan.net/waimaipoi/8e85c9190e0c218c1c2aac83154d7dbc148160.jpg" alt=""/>
+                    <img src="http://p0.meituan.net/waimaipoi/f5e451060d10df50353334486be7d4cf106496.jpg" alt=""/>
                 </div>
                 <div className="nav-content">
                     <nav>

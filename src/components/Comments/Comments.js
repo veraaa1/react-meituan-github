@@ -9,6 +9,8 @@ class Comments extends Component {
         const {comments}=this.props
         const{type}=this.state
         const newCon =comments.filter(e=>type!=="all"?e.rateType===type:e.rateType!=="all") 
+        console.log(newCon,type);
+        
         const commentLists = comments.length?<ul className="comment-List">
             {newCon.map(e=><li key={e.rateTime}><div className="comment-con">
                 <img src={e.avatar} alt=""/>
